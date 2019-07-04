@@ -1,0 +1,11 @@
+<p>product-update works!</p>
+<div class="container">
+        <div class="row">
+            <input type="text" name="price" [(ngModel)]="product.prodId" disabled/>
+            <input type="text" name="price" [(ngModel)]="product.prodName" disabled/>
+            <input type="text" name="price" [(ngModel)]="product.price"/>
+            <div class="col-md-2">
+                <button (click)="updateProduct(product.prodId,product.price)">Update</button>
+            </div>
+        </div>
+    </div>

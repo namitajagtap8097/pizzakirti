@@ -1,0 +1,22 @@
+<!-- <p>prod-get works!</p> -->
+<div class="container">
+    <p>All Types of Pizza</p>
+    <a routerLink="/prod/create">Add New Pizza</a>
+    <div class="row">
+        <div class="col-md-3">PIZZA-ID</div>   
+        <div class="col-md-3">PIZZA-NAME</div>    
+     <div class="col-md-4">PRICE</div>   
+    </div>
+    
+    <div class="row" *ngFor="let product of products" (click)="onSelection(product)" >
+        <div class="col-md-3">{{product.prodId}}</div>
+        <div class="col-md-3">{{product.prodName}}</div>
+        <div class="col-md-3">{{product.price}}</div>
+       
+        <a routerLink="/prod/delete/{{product.prodId}}">Delete</a>
+        <div class="col-md-2">Click for Edit</div>
+    </div>
+    <div *ngIf="selectedProd" class="selectedProd">
+        <app-product-update [product]="selectedProd"></app-product-update>
+    </div>
+</div>
